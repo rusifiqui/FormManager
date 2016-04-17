@@ -1,0 +1,7 @@
+
+--- TODO ---
+
+--- DONE ---
+Crear nuevas tablas para almacenar las respuestas de los usuarios.
+Genrar la entidad AnsweredForm que llevará dentro un Form con la estructura y las respuestas del usuario.
+Genrar la entidad AnsweredQuestion que almacenará las respuestas del usuario.

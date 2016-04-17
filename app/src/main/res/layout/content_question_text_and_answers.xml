@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.novotec.formmanager.forms_designer.QuestionTextAndAnswersActivity"
+    tools:showIn="@layout/activity_question_text_and_answers"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/question_text"
+        android:id="@+id/textView8"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextQuestionAndAnswerQuestion"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/new_answer_text"
+        android:id="@+id/textView9"
+        android:gravity="center" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextNewAnswer"
+            android:layout_weight="0.97"
+            android:inputType="text" />
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="39dp"
+            android:layout_height="38dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:background="@color/colorAccent"
+            android:id="@+id/buttonAddAnswer"
+            android:contentDescription="" />
+    </TableRow>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:id="@+id/listViewPossibleAnswers"
+        android:layout_weight="0.20" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question_mandatory"
+        android:id="@+id/checkBoxMandatoryQuestionAnswers" />
+</LinearLayout>
