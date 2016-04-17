@@ -14,7 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.novotec.formmanager.R;
-import com.novotec.formmanager.entities.Form;
+import com.novotec.formmanager.entities.AnsweredForm;
 
 import java.util.Vector;
 
@@ -29,7 +29,7 @@ import java.util.Vector;
  */
 public class SingleAnswerActivity extends AppCompatActivity {
 
-    private Form form;
+    private AnsweredForm form;
 
     ListView elements;
     EditText searchCriteria;
@@ -119,7 +119,7 @@ public class SingleAnswerActivity extends AppCompatActivity {
         Bundle parameters = getIntent().getExtras();
         if(parameters != null){
             if(parameters.containsKey("form")){
-                form = (Form) parameters.get("form");
+                form = (AnsweredForm) parameters.get("form");
             }else{
                 throw new RuntimeException(getResources().getString(R.string.no_form_found));
             }

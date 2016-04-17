@@ -19,11 +19,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.novotec.formmanager.R;
-import com.novotec.formmanager.entities.Form;
+import com.novotec.formmanager.entities.AnsweredForm;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +39,7 @@ public class PhotoAnswerActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    private Form form;
+    private AnsweredForm form;
     private ImageView mImageView;
     private TextView questionTextView;
     private boolean mandatory = false;
@@ -104,7 +101,7 @@ public class PhotoAnswerActivity extends AppCompatActivity {
         Bundle parameters = getIntent().getExtras();
         if (parameters != null) {
             if (parameters.containsKey("form")) {
-                form = (Form) parameters.get("form");
+                form = (AnsweredForm) parameters.get("form");
             } else {
                 throw new RuntimeException(getResources().getString(R.string.no_form_found));
             }

@@ -10,11 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.novotec.formmanager.R;
-import com.novotec.formmanager.entities.Form;
+import com.novotec.formmanager.entities.AnsweredForm;
 
 public class MultipleChoiceAnswerActivity extends AppCompatActivity {
 
-    private Form form;
+    private AnsweredForm form;
     private boolean mandatory = false;
     private TextView questionTextView;
     String[] answers;
@@ -55,7 +55,7 @@ public class MultipleChoiceAnswerActivity extends AppCompatActivity {
         Bundle parameters = getIntent().getExtras();
         if(parameters != null){
             if(parameters.containsKey("form")){
-                form = (Form) parameters.get("form");
+                form = (AnsweredForm) parameters.get("form");
             }else{
                 throw new RuntimeException(getResources().getString(R.string.no_form_found));
             }

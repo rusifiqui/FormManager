@@ -15,8 +15,6 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -25,7 +23,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.novotec.formmanager.R;
-import com.novotec.formmanager.entities.Form;
+import com.novotec.formmanager.entities.AnsweredForm;
 
 /**
  * Actividad que sirve para representar una pregunta la cual es respondida mediante la representación
@@ -36,7 +34,7 @@ import com.novotec.formmanager.entities.Form;
  */
 public class MapAnswerActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private Form form;
+    private AnsweredForm form;
     private GoogleMap answerMap;
     private TextView questionTextView;
     private boolean mandatory = false;
@@ -149,7 +147,7 @@ public class MapAnswerActivity extends FragmentActivity implements OnMapReadyCal
         Bundle parameters = getIntent().getExtras();
         if (parameters != null) {
             if (parameters.containsKey("form")) {
-                form = (Form) parameters.get("form");
+                form = (AnsweredForm) parameters.get("form");
             } else {
                 throw new RuntimeException(getResources().getString(R.string.no_form_found));
             }
