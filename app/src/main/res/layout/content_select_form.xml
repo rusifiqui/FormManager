@@ -34,10 +34,11 @@
 
             <ListView
                 android:layout_width="match_parent"
+                android:clickable="true"
                 android:layout_height="185dp"
                 android:id="@+id/listViewFormSelect"
                 android:choiceMode="singleChoice"
-                android:listSelector="@color/colorPrimary"
+                android:listSelector="@color/selectedItemList"
                 />
 
             <TextView
@@ -51,6 +52,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:id="@+id/editTextUserSelect" />
 
             <TextView

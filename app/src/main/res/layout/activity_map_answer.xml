@@ -25,7 +25,7 @@
     <include layout="@layout/options_map_view" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabquique"
+        android:id="@+id/fabContinueMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

@@ -4,15 +4,21 @@
     <string name="settings_name">Ajustes de la Aplicación</string>
 
     <!-- Títulos de las actividades -->
-    <string name="title_activity_single_answer">SingleAnswerActivity</string>
-    <string name="title_activity_map_answer">Map</string>
-    <string name="title_activity_photo_answer">PhotoAnswerActivity</string>
-    <string name="title_activity_multiple_choice_answer" translatable="false">MultipleChoiceAnswerActivity</string>
-    <string name="title_activity_text_answer" translatable="false">TextAnswerActivity</string>
+    <string name="title_activity_single_answer">Respuesta Única</string>
+    <string name="title_activity_map_answer">Localización</string>
+    <string name="title_activity_photo_answer">Fotografía</string>
+    <string name="title_activity_multiple_choice_answer" translatable="false">Respuesta Múltiple</string>
+    <string name="title_activity_text_answer" translatable="false">Texto Libre</string>
+    <string name="title_activity_select_form" translatable="false">SelectFormActivity</string>
+    <string name="title_activity_delete_form" translatable="false">DeleteFormActivity</string>
+    <string name="title_activity_review_form" translatable="false">ReviewFormActivity</string>
+    <string name="title_activity_bar_code_answer">Código de Barras</string>
     <string name="title_activity_name_and_description_design">Nuevo formulario</string>
     <string name="title_activity_select_question_type">Tipos de pregunta</string>
     <string name="title_activity_only_question_text">Nueva Pregunta</string>
     <string name="title_activity_question_text_and_answers">Nueva Pregunta</string>
+    <string name="bar_code_reading">Lectura de Código de Barras</string>
+
 
     <!-- Actividades Principales -->
     <string name="main_activity_text">Opciones Disponibles</string>
@@ -21,6 +27,7 @@
     <string name="modify_form">Modificar formulario</string>
     <string name="view_form">Ver formulario</string>
     <string name="delete_form">Eliminar formulario</string>
+    <string name="sync">Sincronización</string>
     <string name="available_forms">Formularios Disponibles</string>
     <string name="form_user">Usuario</string>
     <string name="annotations">Comentarios</string>
@@ -41,6 +48,29 @@
     <string name="form_not_saved">Error al guardar el formulario</string>
     <string name="existing_form">Ya existe un formulario con el nombre introducido</string>
     <string name="no_mode_sent">Es necesario indicar el modo al llamar a la actividad</string>
+
+    <!-- Gestión de formularios -->
+    <string name="attention">Atención</string>
+    <string name="delete_form_manager">Eliminación de Formularios</string>
+    <string name="review_form">Revisión de Formularios</string>
+    <string name="delete_confirmation">Se va a eliminar el formulario seleccionado.\n¿Desea continuar?</string>
+    <string name="delete_user_forms_confirmation">Existen formularios de cumplimentados por el usuario del tipo seleccionado, los cuales serán eliminados.\n¿Desea continuar?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="select_form_to_view">Debe seleccionar el formulario que desea ver</string>
+    <string name="select_form">Debe seleccionar un formulario a eliminar</string>
+    <string name="type">Tipo</string>
+    <string name="date">Fecha</string>
+    <string name="description">Descripción</string>
+    <string name="form_end">Fin del formulario</string>
+
+    <!-- Sincronización -->
+    <string name="form_design_upload">Subir Diseño de Formulario</string>
+    <string name="form_design_download">Descargar Diseño de Formulario</string>
+    <string name="select_form_sync">Seleccione un formulario</string>
+    <string name="connect_title">Conexión</string>
+    <string name="connect_message">Conexión en curso</string>
+
 
     <!-- Actividad Preferencias -->
     <string name="server_preferences">Ajustes del Servidor</string>
@@ -68,6 +98,13 @@
     <string name="question_error">Error al recuperar la pregunta</string>
     <string name="question_type_error">Error al recuperar el tipo de pregunta</string>
     <string name="answers_error">Error al recuperar las respuetas</string>
-    <string name="title_activity_select_form">SelectFormActivity</string>
+    <string name="mandatory_answer">Debe responder la pregunta para continuar</string>
+    <string name="delete_form_error" translatable="false">Se ha producido un error al eleiminar el formulario</string>
+
+    <!-- Consultas -->
+    <string name="select_review_forms" translatable="false">SELECT UF.ID_USER_FORM, FD.FORM_NAME, UF.CREATE_DATE, UF.FORM_DESCRIPTION FROM  USER_FORMS UF, FORM_DESIGN FD WHERE UF.ID_FORM = FD.ID_FORM_DESIGN</string>
+    <string name="select_forms" translatable="false">SELECT ID_FORM_DESIGN, FORM_NAME FROM FORM_DESIGN</string>
+    <string name="title_activity_select_sync_design_form">SelectSyncDesignFormActivity</string>
+
 
 </resources>

@@ -48,4 +48,22 @@
     <string name="name">Name</string>
     <string name="form_saved">Form saved</string>
     <string name="form_not_saved">Error saving form</string>
+    <string name="annotations">Comments</string>
+    <string name="attention">Warning</string>
+    <string name="available_forms">Available Forms</string>
+    <string name="delete_form">Delete Form</string>
+    <string name="fill_form">Fill Form</string>
+    <string name="form_user">User</string>
+    <string name="mandatory_answer">You must answer the question to continue</string>
+    <string name="modify_form">Modify Form</string>
+    <string name="no">No</string>
+    <string name="select_form">You must select a form to delete</string>
+    <string name="view_form">View form</string>
+    <string name="yes">Yes</string>
+    <string name="delete_form_manager">Delete Form</string>
+    <string name="delete_confirmation">The selected form will be deleted.\nContinue?</string>
+    <string name="type">Type</string>
+    <string name="review_form">Forms Review</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
 </resources>

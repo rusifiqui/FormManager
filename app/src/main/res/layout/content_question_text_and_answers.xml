@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.novotec.formmanager.forms_designer.QuestionTextAndAnswersActivity"
+    tools:context="com.novotec.formmanager.formsDesigner.QuestionTextAndAnswersActivity"
     tools:showIn="@layout/activity_question_text_and_answers"
     android:weightSum="1">
 
@@ -51,14 +51,15 @@
             android:src="@android:drawable/ic_menu_add"
             android:background="@color/colorAccent"
             android:id="@+id/buttonAddAnswer"
-            android:contentDescription="" />
+            android:contentDescription="Add Question" />
     </TableRow>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:clickable="true"
+        android:layout_height="0dp"
         android:id="@+id/listViewPossibleAnswers"
-        android:layout_weight="0.20" />
+        android:layout_weight="0.65" />
 
     <CheckBox
         android:layout_width="wrap_content"

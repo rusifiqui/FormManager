@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.novotec.formmanager.forms_designer.SelectQuestionTypeActivity"
+    tools:context="com.novotec.formmanager.formsDesigner.SelectQuestionTypeActivity"
     tools:showIn="@layout/activity_select_question_type"
     android:weightSum="1">
 
@@ -20,17 +20,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/question_type"
         android:id="@+id/textViewQuestionType"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:gravity="center_horizontal" />
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="176dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clickable="true"
         android:id="@+id/listViewQuestionType"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_weight="0.58" />
 </LinearLayout>

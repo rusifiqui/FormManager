@@ -27,5 +27,10 @@ dependencies {
     compile 'com.google.android.gms:play-services:8.4.0'
     // Servicios web con Volley
     compile 'com.mcxiaoke.volley:library:1.0.19'
+    // JSON
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.android.support:support-v4:23.3'
+    // Para leer códigos de barras y códigos QR
+    compile 'com.google.android.gms:play-services:8.4.0'
 
 }

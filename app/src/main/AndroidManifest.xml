@@ -10,19 +10,25 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="barcode" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icono"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,10 +38,14 @@
         </activity>
         <activity
             android:name=".PrefsActivity"
-            android:label="@string/settings_name" />
+            android:configChanges="orientation"
+            android:label="@string/settings_name"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".forms.SingleAnswerActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_single_answer"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -51,14 +61,19 @@
 
         <activity
             android:name=".forms.MapAnswerActivity"
-            android:label="@string/title_activity_map_answer" />
+            android:configChanges="orientation"
+            android:label="@string/title_activity_map_answer"
+            android:screenOrientation="portrait" />
+        <!-- En la actividad de foto se añaden atributos para que no se pierda la foto con el cambio de orientación -->
         <activity
             android:name=".forms.PhotoAnswerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/title_activity_photo_answer"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
-             ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+         ATTENTION: This was auto-generated to add Google Play services to your project for
+         App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
         <meta-data
             android:name="com.google.android.gms.version"
@@ -66,32 +81,69 @@
 
         <activity
             android:name=".forms.MultipleChoiceAnswerActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_multiple_choice_answer"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".forms.TextAnswerActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_text_answer"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".forms_designer.NameAndDescriptionDesignActivity"
+            android:name=".formsDesigner.NameAndDescriptionDesignActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_name_and_description_design"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".forms_designer.SelectQuestionTypeActivity"
+            android:name=".formsDesigner.SelectQuestionTypeActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_select_question_type"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".forms_designer.OnlyQuestionTextActivity"
+            android:name=".formsDesigner.OnlyQuestionTextActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_only_question_text"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".forms_designer.QuestionTextAndAnswersActivity"
+            android:name=".formsDesigner.QuestionTextAndAnswersActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_question_text_and_answers"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".forms.SelectFormActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_select_form"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".formManagement.DeleteFormActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_delete_form"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".formManagement.ReviewFormActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_review_form"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".forms.BarCodeAnswerActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_bar_code_answer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Synchronization.SyncActivity" />
+        <activity
+            android:name=".Synchronization.SelectSyncDesignFormActivity"
+            android:label="@string/title_activity_select_sync_design_form"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

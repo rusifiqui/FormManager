@@ -48,4 +48,22 @@
     <string name="name">Nombre</string>
     <string name="form_saved">Formulario guardado correctamente</string>
     <string name="form_not_saved">Error al guardar el formulario</string>
+    <string name="annotations">Comentarios</string>
+    <string name="attention">Atención</string>
+    <string name="available_forms">Formularios Disponibles</string>
+    <string name="delete_form">Eliminar formulario</string>
+    <string name="fill_form">Cumplimentar formulario</string>
+    <string name="form_user">Usuario</string>
+    <string name="mandatory_answer">Debe responder la pregunta para continuar</string>
+    <string name="modify_form">Modificar formulario</string>
+    <string name="no">No</string>
+    <string name="select_form">Debe seleccionar un formulario a eliminar</string>
+    <string name="view_form">Ver formulario</string>
+    <string name="yes">Si</string>
+    <string name="delete_form_manager">Eliminación de Formularios</string>
+    <string name="delete_confirmation">Se va a eliminar el formulario seleccionado.\n¿Desea continuar?</string>
+    <string name="type">Tipo</string>
+    <string name="review_form">Revisión de Formularios</string>
+    <string name="description">Descripción</string>
+    <string name="date">Fecha</string>
 </resources>
