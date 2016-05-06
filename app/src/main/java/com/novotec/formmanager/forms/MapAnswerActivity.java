@@ -45,6 +45,8 @@ import java.util.Locale;
  */
 public class MapAnswerActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private static final boolean NOVOTEC = false;
+
     public static final int ANSWER_MODE = 1;
     public static final int REVIEW_MODE = 2;
 
@@ -203,7 +205,11 @@ public class MapAnswerActivity extends FragmentActivity implements OnMapReadyCal
                 public void onMapLongClick(LatLng point) {
                     selectedLocation = point;
                     answerMap.clear();
-                    answerMap.addMarker(new MarkerOptions().position(point).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+                    if(NOVOTEC) {
+                        answerMap.addMarker(new MarkerOptions().position(point).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+                    }else{
+                        answerMap.addMarker(new MarkerOptions().position(point));
+                    }
                     selectedLocation = new LatLng(point.latitude, point.longitude);
                 }
             });
@@ -213,8 +219,11 @@ public class MapAnswerActivity extends FragmentActivity implements OnMapReadyCal
             // Y se mueve la cámara al marcador
             answerMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                     new LatLng(point.latitude, point.longitude), 16));
-
-            answerMap.addMarker(new MarkerOptions().position(point).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+            if(NOVOTEC) {
+                answerMap.addMarker(new MarkerOptions().position(point).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+            }else{
+                answerMap.addMarker(new MarkerOptions().position(point));
+            }
         }
     }
 

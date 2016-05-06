@@ -7,19 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Synchronization.SyncActivity">
+    tools:context=".synchronization.SyncActivity">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewResult"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/buttonFormDesignDownload" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/form_design_download"
         android:id="@+id/buttonFormDesignDownload"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="23dp"
         android:layout_below="@+id/buttonFormDesignUpload"
         android:layout_centerHorizontal="true" />
 

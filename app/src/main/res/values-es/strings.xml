@@ -66,4 +66,15 @@
     <string name="review_form">Revisión de Formularios</string>
     <string name="description">Descripción</string>
     <string name="date">Fecha</string>
+    <string name="bar_code_reading">Lectura de Código de Barras</string>
+    <string name="connect_message">Conexión en curso</string>
+    <string name="connect_title">Conexión</string>
+    <string name="delete_user_forms_confirmation">Existen formularios cumplimentados por el usuario del tipo seleccionado, los cuales serán eliminados.\n¿Desea continuar?</string>
+    <string name="form_design_download">Descargar Diseño de Formulario</string>
+    <string name="form_design_upload">Subir Diseño de Formulario</string>
+    <string name="form_end">Fin del formulario</string>
+    <string name="select_form_sync">Seleccione un formulario</string>
+    <string name="select_form_to_view">Debe seleccionar el formulario que desea ver</string>
+    <string name="sync">Sincronización</string>
+    <string name="title_activity_bar_code_answer">Código de Barras</string>
 </resources>

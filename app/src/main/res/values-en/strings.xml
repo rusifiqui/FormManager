@@ -66,4 +66,15 @@
     <string name="review_form">Forms Review</string>
     <string name="description">Description</string>
     <string name="date">Date</string>
+    <string name="bar_code_reading">Read a Bar Code</string>
+    <string name="connect_message">Connecting</string>
+    <string name="connect_title">Conexion</string>
+    <string name="delete_user_forms_confirmation">There are forms that have been completed by users. This forms will be deleted.\nContinue?</string>
+    <string name="form_design_download">Download Form Design</string>
+    <string name="form_design_upload">Upload Form Design</string>
+    <string name="form_end">End of form</string>
+    <string name="select_form_sync">Select a form</string>
+    <string name="select_form_to_view">You must select the form you want to review</string>
+    <string name="sync">Synchronization</string>
+    <string name="title_activity_bar_code_answer">Bar Code</string>
 </resources>

@@ -31,6 +31,7 @@
     <string name="available_forms">Formularios Disponibles</string>
     <string name="form_user">Usuario</string>
     <string name="annotations">Comentarios</string>
+    <string name="version_update">Existe una nueva versión de la aplicación</string>
 
     <!-- Diseño de formularios -->
     <string name="fields_incomplete">Debe completar todos los campos para continuar</string>
@@ -54,7 +55,7 @@
     <string name="delete_form_manager">Eliminación de Formularios</string>
     <string name="review_form">Revisión de Formularios</string>
     <string name="delete_confirmation">Se va a eliminar el formulario seleccionado.\n¿Desea continuar?</string>
-    <string name="delete_user_forms_confirmation">Existen formularios de cumplimentados por el usuario del tipo seleccionado, los cuales serán eliminados.\n¿Desea continuar?</string>
+    <string name="delete_user_forms_confirmation">Existen formularios cumplimentados por el usuario del tipo seleccionado, los cuales serán eliminados.\n¿Desea continuar?</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
     <string name="select_form_to_view">Debe seleccionar el formulario que desea ver</string>
@@ -82,6 +83,10 @@
     <string name="saved">Se han guardado los ajustes</string>
     <string name="act_time">Tiempo de Actualización (segundos):</string>
     <string name="act_distance">Distancia de Actualización (metros):</string>
+    <string name="server_name_error">La dirección del servidor debe terminar en /</string>
+    <string name="server_user_error">Debe introducir el usuario de la base de datos</string>
+    <string name="server_passworrd_error">Debe introducir la contraseña de la base de datos</string>
+
 
     <!-- BBDD -->
     <string name="dbActualized">Se ha actualizado la base de datos</string>
@@ -104,7 +109,7 @@
     <!-- Consultas -->
     <string name="select_review_forms" translatable="false">SELECT UF.ID_USER_FORM, FD.FORM_NAME, UF.CREATE_DATE, UF.FORM_DESCRIPTION FROM  USER_FORMS UF, FORM_DESIGN FD WHERE UF.ID_FORM = FD.ID_FORM_DESIGN</string>
     <string name="select_forms" translatable="false">SELECT ID_FORM_DESIGN, FORM_NAME FROM FORM_DESIGN</string>
-    <string name="title_activity_select_sync_design_form">SelectSyncDesignFormActivity</string>
+    <string name="title_activity_select_sync_design_form" translatable="false">SelectSyncDesignFormActivity</string>
 
 
 </resources>

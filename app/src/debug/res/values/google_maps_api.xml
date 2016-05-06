@@ -5,7 +5,7 @@
     https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=1F:5B:05:3F:58:3A:1B:A7:E9:02:68:16:8C:7F:EB:0B:88:1F:71:A0%3Bcom.novotec.formmanager.forms
 
     You can also add your credentials to an existing key, using this line:
-    1F:5B:05:3F:58:3A:1B:A7:E9:02:68:16:8C:7F:EB:0B:88:1F:71:A0;com.novotec.formmanager.forms
+    1F:5B:05:3F:58:3A:1B:A7:E9:02:68:16:8C:7F:EB:0B:88:1F:71:A0;com.novotec.formmanager
 
     Alternatively, follow the directions here:
     https://developers.google.com/maps/documentation/android/start#get-key
@@ -14,6 +14,6 @@
     string in this file.
     -->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
-        AIzaSyDinDUcDnuReRIRUDhiR7Cf3QTPlrhIlyo
+        AIzaSyBG23yfd8KEYKY5txcD9YhgtIN0su68f1o
     </string>
 </resources>

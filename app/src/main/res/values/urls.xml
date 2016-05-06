@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Usuario por defecto -->
+    <string name="default_user" translatable="false">forms</string>
+    <!-- Contraseña por defecto -->
+    <string name="default_password" translatable="false">Ru$if4Rules2</string>
+
+
+    <!-- URL para comprobar si existe un diseño de formulario en el servidor -->
+    <string name="exists_form_design_name" translatable="false">http://kikevila.noip.me:8080/formsApp/existsFormName.php</string>
+    <!-- URL para subir un diseño de formulario al servidor -->
+    <string name="upload_form_design" translatable="false">http://kikevila.noip.me:8080/formsApp/uploadFormDesign.php</string>
+    <!-- URL para descargar los tipos de diseños de formularios que existen en el servidor -->
+    <string name="get_forms_design" translatable="false">http://kikevila.noip.me:8080/formsApp/getFormDesigns.php</string>
+    <!-- URL para obtener la versión de la aplicación -->
+    <string name="get_version" translatable="false">http://kikevila.noip.me:8080/formsApp/getVersion.php</string>
+
+
+    <!-- Método para comprobar si existe un diseño de formulario en el servidor -->
+    <string name="exists_form_design_name_php" translatable="false">existsFormName.php</string>
+    <!-- Método para subir un diseño de formulario al servidor -->
+    <string name="upload_form_design_php" translatable="false">uploadFormDesign.php</string>
+    <!-- Método para descargar los tipos de diseños de formularios que existen en el servidor -->
+    <string name="get_forms_design_php" translatable="false">getFormDesigns.php</string>
+
+</resources>

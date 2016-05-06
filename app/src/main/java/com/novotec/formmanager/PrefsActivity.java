@@ -39,9 +39,12 @@ public class PrefsActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                savePreferences();
-                Toast toast = Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_SHORT);
-                toast.show();
+
+                if(validateFields()) {
+                    savePreferences();
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
     }
@@ -64,5 +67,27 @@ public class PrefsActivity extends AppCompatActivity {
         password.setText(prefs.getString("dbpass", ""));
         actTime.setText(prefs.getString("actTime", ""));
         actDistance.setText(prefs.getString("actDistance", ""));
+    }
+
+    private boolean validateFields(){
+        String ser = server.getText().toString();
+        if(ser.length() > 0){
+            if(ser.charAt(ser.length()-1) != '/'){
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.server_name_error, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+            if(user.getText().toString().length() == 0){
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.server_user_error, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+            if(password.getText().toString().length() == 0){
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.server_passworrd_error, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        }
+        return true;
     }
 }

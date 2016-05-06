@@ -1,6 +1,8 @@
-package com.novotec.formmanager.Synchronization;
+package com.novotec.formmanager.synchronization;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -36,6 +38,10 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
     Vector<String> formNames;
     String selectedFormName;
     boolean upload = false;
+
+    String serverUrl;
+    String dbUser;
+    String dbPass;
 
     ProgressDialog progress;
 
@@ -143,6 +149,10 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
                 throw new RuntimeException(getResources().getString(R.string.no_form_found));
             }
         }
+        SharedPreferences prefs = getSharedPreferences("dbPreferences", Context.MODE_PRIVATE);
+        serverUrl = prefs.getString("dbserver", "").length() > 0 ? prefs.getString("dbserver", "") : null;
+        dbUser = prefs.getString("dbuser", "").length() > 0 ? prefs.getString("dbuser", "") : getResources().getString(R.string.default_user);
+        dbPass = prefs.getString("dbpass", "").length() > 0 ? prefs.getString("dbpass", "") : getResources().getString(R.string.default_password);
     }
 
     /**
@@ -151,11 +161,18 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
      * @param formName  El nombre del formulario.
      */
     private void makeRequestExistsForm(final String formName){
-        String url = "http://kikevila.noip.me:8080/formsApp/existsFormName.php";
+        String url;
+        if(serverUrl != null){
+            url = serverUrl.concat(getResources().getString(R.string.exists_form_design_name_php));
+        }else {
+            url = getResources().getString(R.string.exists_form_design_name);
+        }
         JSONObject params = new JSONObject();
 
         try {
             params.put("formName", formName);
+            params.put("user", dbUser);
+            params.put("pass", dbPass);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -177,14 +194,13 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        System.out.print("skfksdjf");
                         progress.dismiss();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                onConnectionFailed(error.toString());
                 progress.dismiss();
+                onConnectionFailed(error.toString());
             }
         });
 
@@ -197,7 +213,13 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
      * @param formId    El identificador del diseño de formulario
      */
     private void uploadFormDesign(int formId){
-        String url = "http://kikevila.noip.me:8080/formsApp/uploadFormDesign.php";
+        String url;
+        if(serverUrl != null){
+            url = serverUrl.concat(getResources().getString(R.string.upload_form_design_php));
+        }else {
+            url = getResources().getString(R.string.upload_form_design);
+        }
+
         JSONObject params = new JSONObject();
 
         try {
@@ -205,6 +227,8 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
             final Gson gson = new Gson();
             String json = gson.toJson(f);
             params.put("form", json);
+            params.put("user", dbUser);
+            params.put("pass", dbPass);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -233,8 +257,8 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                onConnectionFailed(error.toString());
                 progress.dismiss();
+                onConnectionFailed(error.toString());
             }
         });
 
@@ -246,9 +270,22 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
      * Método que recupera los formularios disponibles en el servidor
      */
     private void makeRequestGetForms() {
-        String url = "http://kikevila.noip.me:8080/formsApp/getFormDesigns.php";
+        String url;
+        if(serverUrl != null){
+            url = serverUrl.concat(getResources().getString(R.string.get_forms_design_php));
+        }else {
+            url = getResources().getString(R.string.get_forms_design);
+        }
+        JSONObject params = new JSONObject();
 
-        JsonArrayRequest jsonObjReq = new JsonArrayRequest(url,
+        try {
+            params.put("user", dbUser);
+            params.put("pass", dbPass);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonArrayRequest jsonObjReq = new JsonArrayRequest(url, params,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -258,7 +295,7 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
                         try {
                             for(int i = 0; i < response.length(); i++){
                                 JSONObject a = response.getJSONObject(i);
-                                forms.add(a.getInt("ID") + ". " + a.getString("NAME") + "\nAutor: " + a.getString("AUTHOR") + "\nDescripción: " + a.getString("DESCRIPTION"));
+                                forms.add((i+1) + ". " + a.getString("NAME") + "\nAutor: " + a.getString("AUTHOR") + "\nDescripción: " + a.getString("DESCRIPTION"));
                                 formIds.add(a.getInt("ID"));
                                 formNames.add(a.getString("NAME"));
                             }
@@ -276,14 +313,13 @@ public class SelectSyncDesignFormActivity extends BaseVolleyActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        System.out.print("skfksdjf");
                         progress.dismiss();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                onConnectionFailed(error.toString());
                 progress.dismiss();
+                onConnectionFailed(error.toString());
             }
         });
         addToQueue(jsonObjReq);

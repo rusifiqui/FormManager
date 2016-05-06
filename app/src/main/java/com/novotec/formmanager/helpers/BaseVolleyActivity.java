@@ -40,12 +40,12 @@ public class BaseVolleyActivity extends AppCompatActivity {
         setProgressBarIndeterminateVisibility(true);
     }
 
-    public void onConnectionFinished() {
+/*    public void onConnectionFinished() {
         setProgressBarIndeterminateVisibility(false);
     }
-
+*/
     public void onConnectionFailed(String error) {
         setProgressBarIndeterminateVisibility(false);
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show();
     }
 }

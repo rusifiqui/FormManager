@@ -32,8 +32,25 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="kikevila.noip.me:8085">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://kikevila.noip.me:8085/forms/" -->
+                <data android:scheme="http"
+                    android:host="kikevila.noip.me:8085"
+                    android:pathPrefix="/forms" />
+                <data android:scheme="jvilam"
+                    android:host="formmanager" />
+                <data android:scheme="http"
+                    android:host="www.quiquevila.es"
+                    android:pathPrefix="/forms" />
+                <data android:scheme="Gestor de formularios"
+                    android:host="formmanager" />
+                <data android:scheme="formularios"
+                    android:host="formmanager" />
             </intent-filter>
         </activity>
         <activity
@@ -139,11 +156,16 @@
             android:label="@string/title_activity_bar_code_answer"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Synchronization.SyncActivity" />
         <activity
-            android:name=".Synchronization.SelectSyncDesignFormActivity"
+            android:name=".synchronization.SyncActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".synchronization.SelectSyncDesignFormActivity"
             android:label="@string/title_activity_select_sync_design_form"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

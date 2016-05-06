@@ -3,19 +3,29 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
     defaultConfig {
-        applicationId "com.novotec.formmanager"
+        applicationId 'com.jvilam.formmanager'
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
+    }
+    signingConfigs {
+        release {
+            keyAlias 'release'
+            keyPassword 'rusifarules'
+            storeFile file('D:/Android/keystoreformsNew.jks')
+            storePassword 'rusifarules'
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
+    }
+    productFlavors {
     }
 }
 
@@ -32,5 +42,4 @@ dependencies {
     compile 'com.android.support:support-v4:23.3'
     // Para leer códigos de barras y códigos QR
     compile 'com.google.android.gms:play-services:8.4.0'
-
 }
